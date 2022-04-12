@@ -4,12 +4,6 @@ import { API_CONFIG } from '../../config/api.config';
 import { CategoriaDTO } from '../../models/categoria.dot';
 import { CategoriaService } from '../../services/domain/categoria.service';
 
-/**
- * Generated class for the CategoriaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
