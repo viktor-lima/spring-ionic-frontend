@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle> 
+    <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Categoria</ion-title>
@@ -8,5 +8,15 @@
 </ion-header>
 
 <ion-content padding>
-<p>Página de categorias</p>
+    <!-- <ion-thumbnail>
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-thumbnail>
+ -->
+
+  <button ion-item *ngFor="let item of items">
+    <ion-thumbnail item-start>
+      <img src="{{bucketUrl}}/cat{{item.id}}.jpg">
+    </ion-thumbnail>
+    <ion-label>{{item.name}}</ion-label>
+  </button>
 </ion-content>
