@@ -23,7 +23,7 @@ export class ErrorInterceptor implements HttpInterceptor {
                 if(!errorObj.status)
                     errorObj = JSON.parse(errorObj);
 
-                console.log("error detectado ")
+                // console.log("error detectado ")
                 console.log(errorObj);
 
                 switch (errorObj.status) {

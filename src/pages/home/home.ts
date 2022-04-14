@@ -51,4 +51,8 @@ export class HomePage {
       error =>{});
   }
 
+  signup(): void{
+    this.navCtrl.push('SignupPage');
+  }
+
 }
