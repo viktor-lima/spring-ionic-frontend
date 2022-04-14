@@ -30,8 +30,8 @@ export class CategoriaPage {
     
   }
 
-  showProdutos(){
-    this.navCtrl.push("ProdutoPage");
+  showProdutos(categoria_id : string){
+    this.navCtrl.push('ProdutoPage', {categoria_id : categoria_id});
   }
 
 }
