@@ -47,4 +47,8 @@ export class ProdutoPage {
     }
   }
 
+  showDatails(){
+    this.navCtrl.push('ProdutoDetailPage');
+  }
+
 }
