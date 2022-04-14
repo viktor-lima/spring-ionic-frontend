@@ -30,4 +30,8 @@ export class CategoriaPage {
     
   }
 
+  showProdutos(){
+    this.navCtrl.push("ProdutoPage");
+  }
+
 }
