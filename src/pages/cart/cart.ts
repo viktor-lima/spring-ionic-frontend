@@ -60,4 +60,8 @@ export class CartPage {
     this.navCtrl.setRoot('CategoriaPage');
   }
 
+  chechout(){
+   this.navCtrl.push('PickAddressPage') 
+  }
+
 }
