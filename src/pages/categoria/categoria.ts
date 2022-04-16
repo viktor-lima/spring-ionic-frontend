@@ -11,6 +11,8 @@ import { CategoriaService } from '../../services/domain/categoria.service';
   templateUrl: 'categoria.html',
 })
 export class CategoriaPage {
+
+  
   bucketUrl: string = API_CONFIG.bucketBaseUrl;
   items : CategoriaDTO[];
 
