@@ -18,54 +18,54 @@ export class CartService {
 
     getCart(): Cart {
         let cart: Cart = this.storage.getCart();
-        if(cart ==null)
+        if (cart == null)
             cart = this.createOrClearCart();
         return cart;
     }
 
-    addProduct(produto : ProdutoDTO) : Cart{
+    addProduct(produto: ProdutoDTO): Cart {
         let cart = this.getCart();
         let position = cart.items.findIndex(x => x.produto.id == produto.id);
-        if(position == -1)
-            cart.items.push({qtd: 1, produto:produto});
+        if (position == -1)
+            cart.items.push({ qtd: 1, produto: produto });
         this.storage.setCart(cart);
         return cart;
     }
 
-    removeProduct(produto : ProdutoDTO) : Cart{
+    removeProduct(produto: ProdutoDTO): Cart {
         let cart = this.getCart();
         let position = cart.items.findIndex(x => x.produto.id == produto.id);
-        if(position != -1)
+        if (position != -1)
             cart.items.splice(position, 1);
         this.storage.setCart(cart);
         return cart;
     }
 
-    increaseQuantity(produto : ProdutoDTO) : Cart{
+    increaseQuantity(produto: ProdutoDTO): Cart {
         let cart = this.getCart();
         let position = cart.items.findIndex(x => x.produto.id == produto.id);
-        if(position != -1)
+        if (position != -1)
             cart.items[position].qtd++;
         this.storage.setCart(cart);
         return cart;
     }
 
-    decreaseQuantity(produto : ProdutoDTO) : Cart{
+    decreaseQuantity(produto: ProdutoDTO): Cart {
         let cart = this.getCart();
         let position = cart.items.findIndex(x => x.produto.id == produto.id);
-        if(position != -1)
+        if (position != -1)
             cart.items[position].qtd--;
-            if( cart.items[position].qtd < 1)
-                cart = this.removeProduct(produto);
+        if (cart.items[position].qtd < 1)
+            cart = this.removeProduct(produto);
         this.storage.setCart(cart);
         return cart;
     }
 
-    total(): number{
+    total(): number {
         let cart = this.storage.getCart();
         let sum = 0;
         for (let i = 0; i < cart.items.length; i++) {
-            sum += cart.items[i].produto.price * cart.items[i].qtd;  
+            sum += cart.items[i].produto.price * cart.items[i].qtd;
         }
         return sum;
     }

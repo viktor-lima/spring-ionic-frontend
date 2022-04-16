@@ -34,7 +34,7 @@
   <button ion-button block (click)="goOn()">
     Continuar comprando
   </button>
-  <button ion-button color="secondary" block (click)="chechout()">
+  <button *ngIf="total()> 0" ion-button color="secondary" block (click)="chechout()">
     Finalizar pedido
   </button>
 </ion-content>
